@@ -113,7 +113,7 @@ class ComponentGenerator extends Generators.Base {
     if (this.useStyles) {
       this.fs.copyTpl(
         this.templatePath(
-          `${this.generatorVersion}/components/${this.componentTemplateName}/${
+          `${this.generatorVersion}/components/${this.name}/${
             this.componentTemplateName
           }.scss`
         ),
@@ -125,7 +125,7 @@ class ComponentGenerator extends Generators.Base {
     // Create the component
     this.fs.copyTpl(
       this.templatePath(
-        `${this.generatorVersion}/components/${this.componentTemplateName}/${
+        `${this.generatorVersion}/components/${this.name}/${
           this.componentTemplateName
         }`
       ),
