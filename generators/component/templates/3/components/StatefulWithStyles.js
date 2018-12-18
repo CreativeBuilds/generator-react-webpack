@@ -25,6 +25,7 @@
 'use strict';
 
 import React from 'react';
+import { useState } from 'react';
 
 require('./<%= component.displayName.replace("Component","") %>.scss');
 

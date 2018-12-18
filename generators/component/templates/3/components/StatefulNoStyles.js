@@ -22,6 +22,7 @@
 'use strict';
 
 import React from 'react';
+import { useState } from 'react';
 
 let <%= component.className %> = () => (
   <div className="<%= style.className %>">
