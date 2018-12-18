@@ -110,11 +110,12 @@ class ComponentGenerator extends Generators.Base {
     );
 
     // Create the style template. Skipped if nostyle is set as command line flag
-    console.log('FILENAME', settings.style.fileName);
     if (this.useStyles) {
       this.fs.copyTpl(
         this.templatePath(
-          `${this.generatorVersion}/styles/Component${settings.style.suffix}`
+          `${
+            this.generatorVersion
+          }/styles/Component${settings.style.suffix.replace('.css', '.scss')}`
         ),
         this.destinationPath(
           settings.style.path + `${this.name}/` + settings.style.fileName
