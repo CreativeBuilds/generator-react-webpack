@@ -1,6 +1,6 @@
 import React from 'react';
 import cssmodules from 'react-css-modules';
-import styles from '<%= style.webpackPath %>';
+import styles from './<%= component.displayName %>.scss';
 
 class <%= component.className %> extends <%= component.classBase %> {
 

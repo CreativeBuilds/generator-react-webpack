@@ -1,5 +1,5 @@
 import React from 'react';
-import '<%= style.webpackPath %>';
+import './<%= component.displayName %>.scss';
 
 const <%= component.className %> = () => (
   <div className="<%= style.className %>">

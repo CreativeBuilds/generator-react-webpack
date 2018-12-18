@@ -1,5 +1,5 @@
 import React from 'react';
-import '<%= style.webpackPath %>';
+import './<%= component.displayName %>.scss';
 
 class <%= component.className %> extends <%= component.classBase %> {
 
