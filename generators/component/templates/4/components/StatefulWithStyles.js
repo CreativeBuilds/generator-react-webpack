@@ -6,7 +6,7 @@ class <%= component.className %> extends <%= component.classBase %> {
   render() {
     return (
       <div className="<%= style.className %>">
-        rawr xd broth
+        rawr xd broth <%= component.displayName %>
         Please edit <%= component.path %><%= component.fileName %> to update this component!
       </div>
     );
