@@ -2,7 +2,7 @@ import React from 'react';
 
 const <%= component.className %> = () => (
   <div className="<%= style.className %>">
-    Please edit <%= component.path %><%= component.fileName %> to update this component!
+    Please edit <%= component.path %><%= component.fileName %> to update this component 5!
   </div>
 );
 

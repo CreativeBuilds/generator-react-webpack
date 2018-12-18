@@ -3,7 +3,7 @@ import './<%= component.displayName %>.scss';
 
 const <%= component.className %> = () => (
   <div className="<%= style.className %>">
-    Please edit <%= component.path %><%= component.fileName %> to update this component!
+    Please edit <%= component.path %><%= component.fileName %> to update this component 6!
   </div>
 );
 

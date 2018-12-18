@@ -1,5 +1,5 @@
 import React from 'react';
-import '<%= component.displayName.replace("css","scss").replace("styles\\", "./") %>';
+import './<%= component.displayName %>';
 
 class <%= component.className %> extends <%= component.classBase %> {
 
@@ -7,7 +7,7 @@ class <%= component.className %> extends <%= component.classBase %> {
     return (
       <div className="<%= style.className %>">
         rawr xd broth <%= component.displayName %>
-        Please edit <%= component.path %><%= component.fileName %> to update this component!
+        Please edit <%= component.path %><%= component.fileName %> to update this component 3!
       </div>
     );
   }

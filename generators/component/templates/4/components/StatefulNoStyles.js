@@ -5,7 +5,7 @@ class <%= component.className %> extends <%= component.classBase %> {
   render() {
     return (
       <div className="<%= style.className %>">
-        Please edit <%= component.path %><%= component.fileName %> to update this component!
+        Please edit <%= component.path %><%= component.fileName %> to update this component 2!
       </div>
     );
   }
