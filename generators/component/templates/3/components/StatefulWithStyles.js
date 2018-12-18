@@ -8,6 +8,7 @@ class <%= component.className %> extends React.Component {
   render() {
     return (
       <div className="<%= style.className %>">
+        <%= component %>
         Please edit <%= component.path %>/<%= component.fileName %> to update this component 8!
       </div>
     );

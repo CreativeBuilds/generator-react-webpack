@@ -6,7 +6,7 @@ require('./<%= component.displayName %>.scss');
 
 let <%= component.className %> = () => (
   <div className="<%= style.className %>">
-    Please edit <%= component.path %>/<%= component.fileName %> to update this component 10!
+    Please edit <%= component.path %><%= component.fileName %> to update this component 10!
   </div>
 );
 
