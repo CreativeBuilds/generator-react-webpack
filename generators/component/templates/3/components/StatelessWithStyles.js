@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-require('./<%= component.displayName %>.scss');
+require('./<%= component.displayName.replace("Component","") %>.scss');
 
 let <%= component.className %> = () => (
   <div className="<%= style.className %>">
