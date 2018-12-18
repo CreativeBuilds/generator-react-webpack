@@ -3,8 +3,6 @@
 import React from 'react';
 
 require('./<%= component.displayName.replace("Component","") %>.scss');
-let oldComponent = <%= component %>;
-console.log(oldComponent);
 class <%= component.className %> extends React.Component {
   render() {
     return (
