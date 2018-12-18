@@ -5,11 +5,11 @@ import { useState } from 'react';
 
 require('./<%= component.displayName.replace("Component","") %>.scss');
 
-let <%= component.className %> = () => (
-  <div className="<%= style.className %>">
+let <%= component.className %> = () => {
+  return <div className="<%= style.className %>">
     Please edit <%= component.path %><%= component.fileName %> to update this component 8!
   </div>
-);
+};
 
 <%= component.className %>.displayName = '<%= component.displayName %>';
 

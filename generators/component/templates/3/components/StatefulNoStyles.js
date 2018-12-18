@@ -3,11 +3,13 @@
 import React from 'react';
 import { useState } from 'react';
 
-let <%= component.className %> = () => (
-  <div className="<%= style.className %>">
-    Please edit <%= component.path %>/<%= component.fileName %> to update this component 9!
-  </div>
-);
+let <%= component.className %> = () => {
+  return (
+    <div className="<%= style.className %>">
+      Please edit <%= component.path %>/<%= component.fileName %> to update this component 9!
+    </div>
+  );
+}
 
 <%= component.className %>.displayName = '<%= component.displayName %>';
 
