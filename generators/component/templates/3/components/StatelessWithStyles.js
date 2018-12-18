@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-require('<%= style.webpackPath %>');
+require('./<%= component.displayName %>.scss');
 
 let <%= component.className %> = () => (
   <div className="<%= style.className %>">
