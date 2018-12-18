@@ -2,11 +2,10 @@
 const Generators = require('yeoman-generator');
 const utils = require('../../utils/all');
 const C = utils.constants;
-const getAllSettingsFromComponentName = utils.yeoman.getAllSettingsFromComponentName;
-
+const getAllSettingsFromComponentName =
+  utils.yeoman.getAllSettingsFromComponentName;
 
 class ComponentGenerator extends Generators.Base {
-
   constructor(args, options) {
     super(args, options);
 
@@ -59,7 +58,8 @@ class ComponentGenerator extends Generators.Base {
     });
 
     this.option('pure', {
-      desc: 'Create a pure component instead of a "regular" one. Will use React.PureComponent as a base instead of React.Component',
+      desc:
+        'Create a pure component instead of a "regular" one. Will use React.PureComponent as a base instead of React.Component',
       defaults: false
     });
   }
@@ -69,7 +69,7 @@ class ComponentGenerator extends Generators.Base {
   }
 
   set cssClsPrefix(val) {
-    this._cssClsPrefix = (val === '') ? '' : `${val}-`;
+    this._cssClsPrefix = val === '' ? '' : `${val}-`;
   }
 
   configuring() {
@@ -86,29 +86,37 @@ class ComponentGenerator extends Generators.Base {
 
     // Make sure we don't try to use template v3 with cssmodules
     if (this.generatorVersion < 4 && this.useStyles && this.useCssModules) {
-      this.env.error('Creating components with cssmodules is only supported in generator versions 4+');
+      this.env.error(
+        'Creating components with cssmodules is only supported in generator versions 4+'
+      );
     }
 
     // Get the filename of the component template to be copied during this run
-    this.componentTemplateName =
-      utils.yeoman.getComponentTemplateName(this.options.stateless, this.useStyles, this.useCssModules);
+    this.componentTemplateName = utils.yeoman.getComponentTemplateName(
+      this.options.stateless,
+      this.useStyles,
+      this.useCssModules
+    );
   }
 
   writing() {
-    const settings =
-      getAllSettingsFromComponentName(
-        this.name,
-        this.config.get('style'),
-        this.useCssModules,
-        this.options.pure,
-        this.generatorVersion,
-        this.cssClsPrefix
-      );
+    const settings = getAllSettingsFromComponentName(
+      this.name,
+      this.config.get('style'),
+      this.useCssModules,
+      this.options.pure,
+      this.generatorVersion,
+      this.cssClsPrefix
+    );
 
     // Create the style template. Skipped if nostyle is set as command line flag
-    if(this.useStyles) {
+    if (this.useStyles) {
       this.fs.copyTpl(
-        this.templatePath(`${this.generatorVersion}/styles/Component${settings.style.suffix}`),
+        this.templatePath(
+          `${this.generatorVersion}/components/${this.componentTemplateName}/${
+            this.componentTemplateName
+          }.scss`
+        ),
         this.destinationPath(settings.style.path + settings.style.fileName),
         settings
       );
@@ -116,8 +124,14 @@ class ComponentGenerator extends Generators.Base {
 
     // Create the component
     this.fs.copyTpl(
-      this.templatePath(`${this.generatorVersion}/components/${this.componentTemplateName}`),
-      this.destinationPath(settings.component.path + settings.component.fileName),
+      this.templatePath(
+        `${this.generatorVersion}/components/${this.componentTemplateName}/${
+          this.componentTemplateName
+        }`
+      ),
+      this.destinationPath(
+        settings.component.path + settings.component.fileName
+      ),
       settings
     );
 
