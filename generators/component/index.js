@@ -110,14 +110,15 @@ class ComponentGenerator extends Generators.Base {
     );
 
     // Create the style template. Skipped if nostyle is set as command line flag
+    console.log('FILENAME', settings.style.fileName);
     if (this.useStyles) {
       this.fs.copyTpl(
         this.templatePath(
-          `${this.generatorVersion}/components/${this.name}/${
-            this.componentTemplateName
-          }.scss`
+          `${this.generatorVersion}/styles/Component${settings.style.suffix}`
         ),
-        this.destinationPath(settings.style.path + settings.style.fileName),
+        this.destinationPath(
+          settings.style.path + `${this.name}/` + settings.style.fileName
+        ),
         settings
       );
     }
@@ -125,12 +126,10 @@ class ComponentGenerator extends Generators.Base {
     // Create the component
     this.fs.copyTpl(
       this.templatePath(
-        `${this.generatorVersion}/components/${this.name}/${
-          this.componentTemplateName
-        }`
+        `${this.generatorVersion}/components/${this.componentTemplateName}`
       ),
       this.destinationPath(
-        settings.component.path + settings.component.fileName
+        settings.component.path + `${this.name}/` + settings.component.fileName
       ),
       settings
     );
